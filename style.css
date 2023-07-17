@@ -61,17 +61,19 @@ main {
     box-shadow: -4px 4px;
     margin: 5px;
     position: relative;
-    transform-style: preserve-3d;
-    transform: scale(1);
-
+    /* transform-style: preserve-3d;
+    transform: scale(1); */
 }
 
+/* when you hover over the memory card */
 .memory-card:hover {
+    /* the cursor turns into a pointer */
     cursor: pointer;
 
 }
 
 .memory-card:active {
-    transform: scale(0.97);
+    /* on click the card will shrink */
+    transform: scale(0.90);
     transition: transform .2s;
 }
