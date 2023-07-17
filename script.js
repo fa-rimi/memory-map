@@ -4,10 +4,10 @@
  * Player will first get a practice round:
  * practice = 2x2 -- flip cards before timer runs out
  * screen will display an array of 2 by 2 cards that take up a certain amount of space onscreen
- * 
- * * player is prompted to click start 
+ *
+ * * player is prompted to click start
  * * when player clicks the start button; timer will run
- * 
+ *
  * gamePlay: ( a while loop with nested if else loop possibly? )
  * * player will flip a card and the card will stay front-facing
  * * player will then flip another card and will stay front-facing
@@ -18,7 +18,7 @@
  * * cards will shake and flip to back-facing after 5 seconds
  * * } else {
  * * }
- * 
+ *
  * timer: (tbd)
  * * if (timeRunsOut === true) {
  * * gameOver;
@@ -34,4 +34,5 @@
  *
  *
  */
+
 
