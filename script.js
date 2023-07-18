@@ -81,17 +81,12 @@ function flipCard() {
 }
 
 // *********** moves counter function ***********
-// first I need to initialize a moveCounter and set it to 0 because there's 0 clicks at the start of the game
-/** i need create a function that update the counter with every click
- *
- * first I need to create the function
- * then i need to select the id
- *
- *
- * */
+// i need create a function that update the counter with every click
 
+// first I need to create the function that updates the move counter
 function updateMoveCounter() {
-  const moveCounterElement = document.getElementById("move-counter"); 
+  // then i need to select the id within the span element in HTML because thats where it will be updating
+  const moveCounterElement = document.getElementById("move-counter");
   moveCounterElement.textContent = moveCounter.toString();
   console.log("Move Counter:", moveCounter);
 }
