@@ -74,6 +74,10 @@ main {
     transform: translateY(180deg);
     /* transform-style: preserve-3d; will eventually allow us to actually flip the card between the front-face and back-face*/
     transform-style: preserve-3d;
+    transform: scale(0.90);
+    /* transition: ease-in .2s; */
+    /* transition: ease-out .6s; */
+    transition: transform .5s;
 }
 
 /* when you hover over the memory card */
@@ -86,12 +90,6 @@ main {
 .flip {
     /* will flip the memory card horizontally  */
     transform: rotateY(180deg);
-}
-
-.memory-card:active {
-    /* on click the card will shrink */
-    transform: scale(0.90);
-    transition: ease-in-out .2s;
 }
 
 span {
