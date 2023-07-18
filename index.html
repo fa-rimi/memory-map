@@ -30,24 +30,31 @@
     <main>
         <!-- *Memory card divs that player will be matching* -->
         <!-- the cards will grow or shrink depending on the container size -- container size and position is fixed but responsive -->
-        <div class="timer">00:00</div>
-        <div class="container">
-            <div class="memory-card">
-                <img src="#" alt="" class="front-face">
-                <img src="#" alt="" class="back-face">
+        <div>
+            <button id="start">Start</button>
+            <div class="container">
+                <div class="memory-card">
+                    <div src="#" alt="" class="front-face"></div>
+                    <div src="#" alt="" class="back-face"></div>
+                </div>
+                <div class="memory-card" >
+                    <div src="#" alt="" class="front-face" style="background-color: black;"></div>
+                    <div src="#" alt="" class="back-face"></div>
+                </div>
+                <div class="memory-card">
+                    <div src="#" alt="" class="front-face"></div>
+                    <div src="#" alt="" class="back-face"></div>
+                </div>
+                <div class="memory-card">
+                    <div src="#" alt="" class="front-face" style="background-color: black;"></div>
+                    <div src="#" alt="" class="back-face"></div>
+                </div>
             </div>
-            <div class="memory-card">
-                <img src="#" alt="" class="front-face">
-                <img src="#" alt="" class="back-face">
-            </div>
-            <div class="memory-card">
-                <img src="#" alt="" class="front-face">
-                <img src="#" alt="" class="back-face">
-            </div>
-            <div class="memory-card">
-                <img src="#" alt="" class="front-face">
-                <img src="#" alt="" class="back-face">
-            </div>
+            <span>
+                <div id="timer">00:00</div>
+                <div id="counter">counter: </div>
+            </span>
+            
         </div>
     </main>
     <footer></footer>
