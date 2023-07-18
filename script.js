@@ -50,25 +50,11 @@
 const timer = document.querySelector("#timer");
 // add a when user clicks start button the timer is triggered
 
-// *********** moves counter function ***********
-// function createCounter() {
-//   let count = 0;
-//   return function () {
-//     count++;
-//     return count;
-//   };
-// }
-// const counter = createCounter();
-// const countDisplay = document.querySelector("#counter");
-// countDisplay.addEventListener("click", () => {
-//   countDisplay.innerHTML = counter();
-// });
-
 // *********** card flip function ***********
 // selecting all the memory cards
 const memoryCards = document.querySelectorAll(".memory-card");
 
-//! converted the NodeList to an array because when I first added the forEach card event listener I kept getting a typeError saying the function was not a function -> this was because it was reading the memory cards as a nodeList and I cant do the forEach function for a nodeList but I can for an array 
+//! converted the NodeList to an array because when I first added the forEach card event listener I kept getting a typeError saying the function was not a function -> this was because it was reading the memory cards as a nodeList and I cant do the forEach function for a nodeList but I can for an array
 const cardsArray = [...memoryCards];
 
 // iterate over each memory card and add the click event listener
@@ -83,11 +69,30 @@ let firstCard;
 
 // created a call back function for flipCard to actually flip the cards now
 function flipCard() {
-    // Check if the board is locked or if the card is already flipped, or if the same card is clicked
-    if (lockBoard || this === firstCard || this.classList.contains("flip")) {
-      return;
-    }
-  
-    // Add the flip class to the clicked card so we know that it has already been flipped
-    this.classList.add("flip"); 
+  // Check if the board is locked or if the card is already flipped, or if the same card is clicked
+  if (lockBoard || this === firstCard || this.classList.contains("flip")) {
+    return;
+  }
+
+  // Add the flip class to the clicked card so we know that it has already been flipped
+  this.classList.add("flip");
+  moveCounter++;
+  updateMoveCounter();
 }
+
+// *********** moves counter function ***********
+// first I need to initialize a moveCounter and set it to 0 because there's 0 clicks at the start of the game
+/** i need create a function that update the counter with every click 
+ * 
+ * first I need to create the function
+ * then i need to select the id
+ * 
+ * 
+ * */
+
+let moveCounter = 0;
+function updateMoveCounter() {
+  const moveCounterElement = document.getElementById("counter");
+  moveCounterElement.textContent = moveCounter.toString(); 
+}
+
