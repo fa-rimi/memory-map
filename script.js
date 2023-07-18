@@ -64,8 +64,8 @@ cardsArray.forEach((card) => {
 
 // lock board will lock board so multiple cards cant be flipped and I set it to false because at the beginning of the game no cards will flip until game has started
 let lockBoard = false;
-// going to store the first card thats flipped
-let firstCard;
+let firstCard; // going to store the first card thats flipped
+let moveCounter = 0; // initializing a move counter
 
 // created a call back function for flipCard to actually flip the cards now
 function flipCard() {
@@ -82,18 +82,16 @@ function flipCard() {
 
 // *********** moves counter function ***********
 // first I need to initialize a moveCounter and set it to 0 because there's 0 clicks at the start of the game
-/** i need create a function that update the counter with every click 
- * 
+/** i need create a function that update the counter with every click
+ *
  * first I need to create the function
  * then i need to select the id
- * 
- * 
+ *
+ *
  * */
 
-let moveCounter = 0;
 function updateMoveCounter() {
-  const moveCounterElement = document.getElementById("counter");
-  moveCounterElement.textContent = moveCounter.toString(); 
+  const moveCounterElement = document.getElementById("move-counter"); 
+  moveCounterElement.textContent = moveCounter.toString();
   console.log("Move Counter:", moveCounter);
 }
-
