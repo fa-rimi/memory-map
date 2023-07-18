@@ -94,5 +94,6 @@ let moveCounter = 0;
 function updateMoveCounter() {
   const moveCounterElement = document.getElementById("counter");
   moveCounterElement.textContent = moveCounter.toString(); 
+  console.log("Move Counter:", moveCounter);
 }
 
