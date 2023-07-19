@@ -105,8 +105,27 @@ function flipCard() {
 // if the cards match
 // the cards will stay front-face side up
 // if it does not, both cards will flip back to its back-face
+function matchCheck() {
+  let isMatch = firstCard.dataset.color === secondCard.dataset.color;
+
+  if (isMatch) {
+    // disable card
+  } else {
+    // un flip the card
+  }
+}
 
 // *********** disable flip card ***********
+
+// *********** set time out ***********
+function startTimeout() {
+  timeoutID = setTimeout(() => {
+    if (firstCard) {
+      firstCard.classList.remove("flip");
+      // reset the board;
+    }
+  }, 1000);
+}
 
 // *********** moves counter function ***********
 // i need create a function that update the counter with every click
