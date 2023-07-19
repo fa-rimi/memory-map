@@ -46,16 +46,28 @@ const timer = document.querySelector("#timer");
 // selecting all the memory cards
 const memoryCards = document.querySelectorAll(".memory-card");
 const cardsArray = [...memoryCards];
-//! converted the NodeList to an array because when I first added the forEach card event listener I kept getting a typeError saying the function was not a function -> this was because it was reading the memory cards as a nodeList and I cant do the forEach function for a nodeList but I can for an array
+//! converted the NodeList to an array because I kept getting a typeError saying the function was not a function -> this was because it was reading the memory cards as a nodeList and I cant do the forEach function for a nodeList but I can for an array
 
-// iterate over each memory card and add the click event listener
+// Array to hold the colors
+const colors = [
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "orange",
+  "purple",
+  "pink",
+  "cyan",
+];
+
+// Iterate over each memory card and assign randomized colors
 cardsArray.forEach((card) => {
   card.addEventListener("click", flipCard);
 });
 
 // lock board will lock board so multiple cards cant be flipped and I set it to false because at the beginning of the game no cards will flip until game has started
 let lockBoard = false;
-let firstCard; // going to store the first card thats flipped
+let firstCard, secondCard; // going to store the first card thats flipped
 let moveCounter = 0; // initializing a move counter
 
 // created a call back function for flipCard to actually flip the cards now
@@ -72,16 +84,20 @@ function flipCard() {
   updateMoveCounter();
 
   // *********** check if cards match ***********
-  // add something that says:
-  // if this function applies
-  // when the first card is flipped {
-  // start the a time out thing that basically makes sure that you flip another card before the 8 second
-  // limit (or it will consider you inactive and flip back)
-  // } else {
-  // if you clicked another card (the secondary card)
-  // it will clear time out
-  // and check if the cards match which will run another function that checks the colors
-  // }
+  if (!firstCard) {
+    // apply this function to first card
+    firstCard = this;
+    // if first card is clicked it will start time out which checks if the next card has been clicked
+    startTimeout();
+  } else {
+    // if second card is clicked
+    // stop time out with clearTimeOut function if the second card is clicked before the timeout time
+    clearTimeout(timeoutID);
+    // apply this function to second card
+    secondCard = this;
+    // check if both cards match
+    matchCheck();
+  }
 }
 
 // *********** check if cards match ***********

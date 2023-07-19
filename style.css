@@ -4,6 +4,9 @@
     --front-bg-placeholder: whitesmoke;
     --back-bg-placeholder: brown;
 
+    --final-main-bg: #F3F7F0;
+    --back-face-img: url(images/pokemon-card-back.png);
+
 }
 
 html,
@@ -15,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: var(--main-bg-placeholder);
+    background-color: var(--final-main-bg-color);
 
     /* overflow: hidden; for max size but will be different for responsiveness*/
 }
@@ -46,20 +49,25 @@ main {
 }
 
 .front-face {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     position: absolute;
     border-radius: 25px;
-    background-color: var(--main-bg-placeholder);
+    background-color: var(--front-bg-placeholder);
 }
 
 .back-face {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     position: absolute;
     border-radius: 25px;
-    background-color: var(--back-bg-placeholder);
+    background-position-y: center;
     backface-visibility: hidden;
+}
+
+.back-face img {
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -103,4 +111,5 @@ span {
     font-size: 25px;
     margin: 10px;
 }
+
 /* end of timer and counter*/
